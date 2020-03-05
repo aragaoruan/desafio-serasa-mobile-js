@@ -22,7 +22,8 @@ module.exports = {
   },
   plugins: [
     'react',
-    'prettier'
+    'prettier',
+    'eslint-plugin-import-helpers'
   ],
   rules: {
     'prettier/prettier': 'error',
@@ -32,7 +33,20 @@ module.exports = {
         extensions: ['.jsx', '.js']
       }
     ],
-    'import/prefer-default-export': 'off'
+    'import/prefer-default-export': 'off',
+    'import-helpers/order-imports': [
+      'warn',
+      {
+          newlinesBetween: 'always', // new line between groups
+          groups: [
+              '/ˆreact/',
+              'module',
+              '/ˆ~/',
+              ['parent', 'sibling', 'index'],
+          ],
+          alphabetize: { order: 'asc', ignoreCase: true },
+      },
+  ],
   },
   settings: {
     "import/resolver": {
