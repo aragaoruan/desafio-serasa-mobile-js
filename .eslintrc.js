@@ -39,11 +39,11 @@ module.exports = {
       {
           newlinesBetween: 'always', // new line between groups
           groups: [
-              '/ˆreact/',
-              'module',
-              '/ˆ~/',
-              ['parent', 'sibling', 'index'],
-          ],
+            '/^react/',
+            'module',
+            '/^~/',
+            ['parent', 'sibling', 'index'],
+        ],
           alphabetize: { order: 'asc', ignoreCase: true },
       },
   ],
