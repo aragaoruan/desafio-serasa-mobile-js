@@ -1,4 +1,7 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { getScoreRequest } from '~/store/modules/score/actions';
 
 import {
   Container,
@@ -13,26 +16,32 @@ import {
 } from './styles';
 
 export default function Debit() {
+  const { score } = useSelector(state => state.score);
+  const dispatch = useDispatch();
+  function handleDebt() {
+    dispatch(getScoreRequest('2'));
+  }
   return (
     <>
-      <Container>
-        <TitleDesciption>Você possuí uma pendência com</TitleDesciption>
+      {score.debt.map(deb => (
+        <Container key={deb.id}>
+          <TitleDesciption>Você possuí uma pendência com</TitleDesciption>
 
-        <DescriptionContainer>
-          <Image
-            source={{
-              uri: 'https://i.ya-webdesign.com/images/xbox-one-icon-png-2.png',
-            }}
-          />
-          <ValuesContainer>
-            <OldValue>R$280,00</OldValue>
-            <NewValue>por R$79,90</NewValue>
-          </ValuesContainer>
-        </DescriptionContainer>
-      </Container>
-      <ButtonContainer>
-        <ButtonDebit>Negociar Agora</ButtonDebit>
-      </ButtonContainer>
+          <DescriptionContainer>
+            <Image source={deb.photo} />
+            <ValuesContainer>
+              <OldValue>{deb.oldValue}</OldValue>
+              <NewValue>{deb.newValue}</NewValue>
+            </ValuesContainer>
+          </DescriptionContainer>
+
+          <ButtonContainer>
+            <ButtonDebit onPress={() => handleDebt()}>
+              Negociar Agora
+            </ButtonDebit>
+          </ButtonContainer>
+        </Container>
+      ))}
     </>
   );
 }

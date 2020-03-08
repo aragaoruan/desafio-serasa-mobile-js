@@ -1,4 +1,7 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { getScoreRequest } from '~/store/modules/score/actions';
 
 import {
   Container,
@@ -13,27 +16,29 @@ import {
 } from './styles';
 
 export default function Proposal() {
+  const { score } = useSelector(state => state.score);
+  const dispatch = useDispatch();
+  function handleDebt() {
+    dispatch(getScoreRequest('2'));
+  }
   return (
     <>
-      <Container>
-        <TitleDesciption>Plano de proteção do RG</TitleDesciption>
+      {score.protection.map(pro => (
+        <Container key={pro.id}>
+          <TitleDesciption>Plano de proteção do RG</TitleDesciption>
 
-        <DescriptionContainer>
-          <Image
-            source={{
-              uri:
-                'https://icon-icons.com/icons2/1732/PNG/48/iconfinder-securityprotectlockshield46-4021440_113126.png',
-            }}
-          />
-          <ValuesContainer>
-            <OldValue>Anuidade Grátis</OldValue>
-            <NewValue>Limite de R$2.000,00</NewValue>
-          </ValuesContainer>
-        </DescriptionContainer>
-      </Container>
-      <ButtonContainer>
-        <ButtonDebit>Ver oferta</ButtonDebit>
-      </ButtonContainer>
+          <DescriptionContainer>
+            <Image source={pro.photo} />
+            <ValuesContainer>
+              <OldValue>{pro.oldValue}</OldValue>
+              <NewValue>{pro.newValue}</NewValue>
+            </ValuesContainer>
+          </DescriptionContainer>
+          <ButtonContainer>
+            <ButtonDebit onPress={() => handleDebt()}>Ver oferta</ButtonDebit>
+          </ButtonContainer>
+        </Container>
+      ))}
     </>
   );
 }

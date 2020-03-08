@@ -12,13 +12,7 @@ export const Container = styled(LinearGradient)`
   padding: 25px 0 90px;
 `;
 
-export const Progress = styled(ProgressCircle).attrs({
-  borderWidth: 3,
-  percent: 50,
-  shadowColor: desaturate(0.1, colors.pontuacao_media.primaryColor),
-  radius: 75,
-  color: '#fff',
-})``;
+export const Progress = styled(ProgressCircle)``;
 
 export const AvatarPhoto = styled.Image`
   height: 140px;

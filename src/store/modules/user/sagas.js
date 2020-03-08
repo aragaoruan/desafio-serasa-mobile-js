@@ -15,7 +15,6 @@ export function* getUser() {
       },
     };
 
-    console.log('AQUI');
     yield put(getUserSuccess(data));
   } catch (err) {
     Alert.alert('Falha', 'Erro au buscar usuario');

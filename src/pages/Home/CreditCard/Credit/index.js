@@ -1,4 +1,7 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { getScoreRequest } from '~/store/modules/score/actions';
 
 import {
   Container,
@@ -13,29 +16,32 @@ import {
 } from './styles';
 
 export default function Credit() {
+  const { score } = useSelector(state => state.score);
+  const dispatch = useDispatch();
+  function handleDebt() {
+    dispatch(getScoreRequest('3'));
+  }
   return (
     <>
-      <Container>
-        <TitleDesciption>
-          Encontramos uma oferta de cartao de credito
-        </TitleDesciption>
+      {score.credit.map(cred => (
+        <Container key={cred.id}>
+          <TitleDesciption>
+            Encontramos uma oferta de cartao de credito
+          </TitleDesciption>
 
-        <DescriptionContainer>
-          <Image
-            source={{
-              uri:
-                'https://assets.b9.com.br/wp-content/uploads/2019/01/mastercard-2019.jpg',
-            }}
-          />
-          <ValuesContainer>
-            <OldValue>Anuidade Grátis</OldValue>
-            <NewValue>Limite de R$2.000,00</NewValue>
-          </ValuesContainer>
-        </DescriptionContainer>
-      </Container>
-      <ButtonContainer>
-        <ButtonDebit>Ver oferta</ButtonDebit>
-      </ButtonContainer>
+          <DescriptionContainer>
+            <Image source={cred.photo} />
+            <ValuesContainer>
+              <OldValue>Anuidade Grátis</OldValue>
+              <NewValue>Limite de R$2.000,00</NewValue>
+            </ValuesContainer>
+          </DescriptionContainer>
+
+          <ButtonContainer>
+            <ButtonDebit onPress={() => handleDebt()}>Ver oferta</ButtonDebit>
+          </ButtonContainer>
+        </Container>
+      ))}
     </>
   );
 }

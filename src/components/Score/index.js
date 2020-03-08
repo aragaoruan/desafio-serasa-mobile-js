@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import Line from '~/components/Line';
 
@@ -12,10 +13,12 @@ import {
 } from './styles';
 
 export default function Score() {
+  const { score } = useSelector(state => state.score);
+
   return (
     <Container>
-      <Points>26</Points>
-      <DescriptionPoints>Sua pontuação é baixa</DescriptionPoints>
+      <Points>{score?.points}</Points>
+      <DescriptionPoints>{score?.description}</DescriptionPoints>
       <Line />
       <Button icon="expand-less">Saiba mais</Button>
       <ContainerDescriptionScore>
