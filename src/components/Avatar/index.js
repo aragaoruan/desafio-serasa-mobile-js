@@ -1,21 +1,19 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { colors } from '~/styles';
 
 import { Container, Progress, AvatarPhoto, Name } from './styles';
 
 export default function Avatar() {
+  const { user } = useSelector(state => state.user);
+
   return (
     <Container colors={colors.pontuacao_media.backgroundcolor}>
       <Progress>
-        <AvatarPhoto
-          source={{
-            uri:
-              'http://api.adorable.io/avatars/90/serasaconsumidor@adorable.png',
-          }}
-        />
+        <AvatarPhoto source={user?.photo} />
       </Progress>
-      <Name>Maurivan Luiz</Name>
+      <Name>{user?.name}</Name>
     </Container>
   );
 }
