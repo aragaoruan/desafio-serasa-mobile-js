@@ -52,7 +52,17 @@ export function* getUser({ payload }) {
             newValue: 'Limite de R$ 2.000,00',
           },
         ],
-        protection: [],
+        protection: [
+          {
+            id: 1,
+            photo: {
+              uri:
+                'https://icon-icons.com/icons2/1732/PNG/48/iconfinder-securityprotectlockshield46-4021440_113126.png',
+            },
+            oldValue: 'Anuidade Grátis',
+            newValue: 'Limite de R$ 2.000,00',
+          },
+        ],
       };
     }
 

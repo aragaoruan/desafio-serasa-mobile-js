@@ -1,10 +1,9 @@
 import LinearGradient from 'react-native-linear-gradient';
 import ProgressCircle from 'react-native-progress-circle';
 
-import { desaturate } from 'polished';
 import styled from 'styled-components/native';
 
-import { colors, fonts } from '~/styles';
+import { fonts } from '~/styles';
 
 export const Container = styled(LinearGradient)`
   justify-content: center;
