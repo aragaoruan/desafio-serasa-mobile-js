@@ -37,16 +37,18 @@ module.exports = {
     'import-helpers/order-imports': [
       'warn',
       {
-          newlinesBetween: 'always', // new line between groups
-          groups: [
-            '/^react/',
-            'module',
-            '/^~/',
-            ['parent', 'sibling', 'index'],
+        newlinesBetween: 'always', // new line between groups
+        groups: [
+          '/^react/',
+          'module',
+          '/^~/',
+          ['parent', 'sibling', 'index'],
         ],
-          alphabetize: { order: 'asc', ignoreCase: true },
+        alphabetize: { order: 'asc', ignoreCase: true },
       },
-  ],
+    ],
+    "react/jsx-props-no-spreading": "off"
+
   },
   settings: {
     "import/resolver": {

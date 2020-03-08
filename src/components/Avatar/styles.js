@@ -1,7 +1,10 @@
 import LinearGradient from 'react-native-linear-gradient';
 import ProgressCircle from 'react-native-progress-circle';
 
+import { desaturate } from 'polished';
 import styled from 'styled-components/native';
+
+import { colors, fonts } from '~/styles';
 
 export const Container = styled(LinearGradient)`
   justify-content: center;
@@ -12,12 +15,12 @@ export const Container = styled(LinearGradient)`
 export const Progress = styled(ProgressCircle).attrs({
   borderWidth: 3,
   percent: 50,
-  shadowColor: '#000',
+  shadowColor: desaturate(0.1, colors.pontuacao_media.primaryColor),
   radius: 75,
   color: '#fff',
 })``;
 
-export const Avatar = styled.Image`
+export const AvatarPhoto = styled.Image`
   height: 140px;
   width: 140px;
   border-radius: 70px;
@@ -25,6 +28,7 @@ export const Avatar = styled.Image`
 `;
 
 export const Name = styled.Text`
+  margin-top: 10px;
   color: #fff;
-  font-size: 30px;
+  font-size: ${fonts.bigger}px;
 `;
