@@ -3,7 +3,9 @@ import React from 'react';
 import Avatar from '~/components/Avatar';
 import Score from '~/components/Score';
 
-import DebitCart from './DebitCard';
+import CreditCard from './CreditCard';
+import DebitCart from './DebtCard';
+import ProposedCard from './ProposedCard';
 import { Container } from './styles';
 
 export default function Home() {
@@ -11,7 +13,10 @@ export default function Home() {
     <Container>
       <Avatar />
       <Score />
+
       <DebitCart />
+      <CreditCard />
+      <ProposedCard />
     </Container>
   );
 }

@@ -1,9 +1,8 @@
 import React from 'react';
-import { Text } from 'react-native';
 
 import Card from '~/components/Card';
 
-import Debit from './Debit';
+import Debit from './Debt';
 import { Container } from './styles';
 
 export default function DebitCard() {
