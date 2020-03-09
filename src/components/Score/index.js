@@ -17,7 +17,8 @@ export default function Score() {
 
   return (
     <Container>
-      <Points>{score?.points}</Points>
+      <Points value={score?.points} countBy={1} />
+
       <DescriptionPoints>{score?.description}</DescriptionPoints>
       <Line />
       <Button icon="expand-less">Saiba mais</Button>

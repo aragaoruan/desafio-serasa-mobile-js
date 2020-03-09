@@ -9,6 +9,7 @@ export const Container = styled.View`
 `;
 
 export const TitleDesciption = styled.Text`
+  margin-top: 10px;
   font-size: ${fonts.regular}px;
 `;
 

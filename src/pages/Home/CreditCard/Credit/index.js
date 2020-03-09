@@ -1,5 +1,7 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
+import PropTypes from 'prop-types';
 
 import { getScoreRequest } from '~/store/modules/score/actions';
 
@@ -15,33 +17,38 @@ import {
   ButtonDebit,
 } from './styles';
 
-export default function Credit() {
-  const { score } = useSelector(state => state.score);
+export default function Credit({ cred }) {
   const dispatch = useDispatch();
   function handleDebt() {
     dispatch(getScoreRequest('3'));
   }
   return (
     <>
-      {score.credit.map(cred => (
-        <Container key={cred.id}>
-          <TitleDesciption>
-            Encontramos uma oferta de cartao de credito
-          </TitleDesciption>
+      <Container>
+        <TitleDesciption>
+          Encontramos uma oferta de cartao de credito
+        </TitleDesciption>
 
-          <DescriptionContainer>
-            <Image source={cred.photo} />
-            <ValuesContainer>
-              <OldValue>Anuidade Grátis</OldValue>
-              <NewValue>Limite de R$2.000,00</NewValue>
-            </ValuesContainer>
-          </DescriptionContainer>
+        <DescriptionContainer>
+          <Image source={cred.photo} />
+          <ValuesContainer>
+            <OldValue>{cred.oldValue}</OldValue>
+            <NewValue>{cred.newValue}</NewValue>
+          </ValuesContainer>
+        </DescriptionContainer>
 
-          <ButtonContainer>
-            <ButtonDebit onPress={() => handleDebt()}>Ver oferta</ButtonDebit>
-          </ButtonContainer>
-        </Container>
-      ))}
+        <ButtonContainer>
+          <ButtonDebit onPress={() => handleDebt()}>Ver oferta</ButtonDebit>
+        </ButtonContainer>
+      </Container>
     </>
   );
 }
+
+Credit.propTypes = {
+  cred: PropTypes.oneOfType([PropTypes.object]),
+};
+
+Credit.defaultProps = {
+  cred: {},
+};

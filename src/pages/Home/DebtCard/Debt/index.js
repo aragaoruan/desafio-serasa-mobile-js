@@ -1,5 +1,7 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
+import PropTypes from 'prop-types';
 
 import { getScoreRequest } from '~/store/modules/score/actions';
 
@@ -15,33 +17,36 @@ import {
   ButtonDebit,
 } from './styles';
 
-export default function Debit() {
-  const { score } = useSelector(state => state.score);
+export default function Debit({ deb }) {
   const dispatch = useDispatch();
   function handleDebt() {
     dispatch(getScoreRequest('2'));
   }
   return (
     <>
-      {score.debt.map(deb => (
-        <Container key={deb.id}>
-          <TitleDesciption>Você possuí uma pendência com</TitleDesciption>
+      <Container>
+        <TitleDesciption>Você possuí uma pendência com</TitleDesciption>
 
-          <DescriptionContainer>
-            <Image source={deb.photo} />
-            <ValuesContainer>
-              <OldValue>{deb.oldValue}</OldValue>
-              <NewValue>{deb.newValue}</NewValue>
-            </ValuesContainer>
-          </DescriptionContainer>
+        <DescriptionContainer>
+          <Image source={deb.photo} />
+          <ValuesContainer>
+            <OldValue>{deb.oldValue}</OldValue>
+            <NewValue>{deb.newValue}</NewValue>
+          </ValuesContainer>
+        </DescriptionContainer>
 
-          <ButtonContainer>
-            <ButtonDebit onPress={() => handleDebt()}>
-              Negociar Agora
-            </ButtonDebit>
-          </ButtonContainer>
-        </Container>
-      ))}
+        <ButtonContainer>
+          <ButtonDebit onPress={() => handleDebt()}>Negociar Agora</ButtonDebit>
+        </ButtonContainer>
+      </Container>
     </>
   );
 }
+
+Debit.propTypes = {
+  deb: PropTypes.oneOfType([PropTypes.object]),
+};
+
+Debit.defaultProps = {
+  deb: {},
+};

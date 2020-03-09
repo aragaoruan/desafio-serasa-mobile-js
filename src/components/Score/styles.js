@@ -1,3 +1,5 @@
+import AnimateNumber from 'react-native-animate-number';
+
 import styled from 'styled-components/native';
 
 import ComponentButton from '~/components/Button';
@@ -9,13 +11,13 @@ export const Container = styled.View`
   background: white;
   border-radius: 5px;
   border: #c1c1c1 1px solid;
-  box-shadow: 0px 0px 5px #4f514f;
+  box-shadow: 0px 0px 2px #4f514f;
 
   justify-content: center;
   align-items: center;
 `;
 
-export const Points = styled.Text`
+export const Points = styled(AnimateNumber)`
   font-size: 50px;
   color: #4f514f;
   font-weight: bold;

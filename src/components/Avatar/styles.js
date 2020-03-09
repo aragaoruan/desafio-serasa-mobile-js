@@ -1,3 +1,4 @@
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import LinearGradient from 'react-native-linear-gradient';
 import ProgressCircle from 'react-native-progress-circle';
 
@@ -8,7 +9,7 @@ import { fonts } from '~/styles';
 export const Container = styled(LinearGradient)`
   justify-content: center;
   align-items: center;
-  padding: 25px 0 90px;
+  padding: ${getStatusBarHeight() + 25}px 0 90px;
 `;
 
 export const Progress = styled(ProgressCircle)``;
