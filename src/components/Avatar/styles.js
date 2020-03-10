@@ -1,6 +1,6 @@
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import LinearGradient from 'react-native-linear-gradient';
-import ProgressCircle from 'react-native-progress-circle';
 
 import styled from 'styled-components/native';
 
@@ -12,7 +12,7 @@ export const Container = styled(LinearGradient)`
   padding: ${getStatusBarHeight() + 25}px 0 90px;
 `;
 
-export const Progress = styled(ProgressCircle)``;
+export const Progress = styled(AnimatedCircularProgress)``;
 
 export const AvatarPhoto = styled.Image`
   height: 140px;

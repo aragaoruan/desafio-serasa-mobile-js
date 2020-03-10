@@ -1,12 +1,9 @@
-import { Platform } from 'react-native';
-
 import axios from 'axios';
 
+const host = '192.168.43.7'; // put the host of your machine here
+
 const api = axios.create({
-  baseURL:
-    Platform.OS === 'android'
-      ? 'http://192.168.0.101:3333/'
-      : 'http://192.168.0.101:3333/',
+  baseURL: `http://${host}:3333/`,
 });
 
 export default api;
