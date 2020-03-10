@@ -26,6 +26,7 @@ module.exports = {
     'eslint-plugin-import-helpers'
   ],
   rules: {
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['draft'] }],
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
       'warn',

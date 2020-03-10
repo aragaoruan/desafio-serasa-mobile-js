@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Avatar from '~/components/Avatar';
 import Score from '~/components/Score';
@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    dispatch(getScoreRequest('1'));
+    dispatch(getScoreRequest('0'));
   }, []);
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert } from 'react-native';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import PropTypes from 'prop-types';
 
@@ -20,6 +20,7 @@ import {
 
 export default function Credit({ cred }) {
   const dispatch = useDispatch();
+  const { score } = useSelector(state => state.score);
   function handleDebt() {
     Alert.alert(
       'Atenção',
@@ -28,7 +29,10 @@ export default function Credit({ cred }) {
         {
           text: 'Cancelar',
         },
-        { text: 'Confirmar', onPress: () => dispatch(getScoreRequest('3')) },
+        {
+          text: 'Confirmar',
+          onPress: () => dispatch(getScoreRequest(score.points)),
+        },
       ],
       { cancelable: false }
     );
