@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert } from 'react-native';
 import { useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
@@ -20,7 +21,17 @@ import {
 export default function Proposal({ pro }) {
   const dispatch = useDispatch();
   function handleDebt() {
-    dispatch(getScoreRequest('2'));
+    Alert.alert(
+      'Atenção',
+      'Aceitar proposta de proteção ?',
+      [
+        {
+          text: 'Cancelar',
+        },
+        { text: 'Confirmar', onPress: () => dispatch(getScoreRequest('3')) },
+      ],
+      { cancelable: false }
+    );
   }
   return (
     <>

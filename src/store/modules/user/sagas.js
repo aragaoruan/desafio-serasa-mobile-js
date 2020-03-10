@@ -1,19 +1,14 @@
 import { Alert } from 'react-native';
 
-import { takeLatest, put, all } from 'redux-saga/effects';
+import { takeLatest, call, put, all } from 'redux-saga/effects';
 
-// import api from '~/services/api';
+import api from '~/services/api';
 
 import { getUserSuccess, getUserError } from './actions';
 
 export function* getUser() {
   try {
-    const data = {
-      name: 'Maurivan Luiz',
-      photo: {
-        uri: 'http://api.adorable.io/avatars/90/serasaconsumidor@adorable.png',
-      },
-    };
+    const { data } = yield call(api.get, '/user');
 
     yield put(getUserSuccess(data));
   } catch (err) {

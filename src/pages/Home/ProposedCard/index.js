@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Card from '~/components/Card';
+import { colors } from '~/styles';
 
 import Proposal from './Proposal';
 import { Container, View, Text } from './styles';
@@ -11,7 +12,7 @@ export default function ProposedCard() {
   const description = {
     title: 'Plano de proteção',
     icon: 'shield-alt',
-    color: '#0b827e',
+    color: colors.pontuacao_alta.primaryColor,
   };
   return (
     <>
@@ -22,7 +23,7 @@ export default function ProposedCard() {
               ...description,
               component: (
                 <View>
-                  <Text>Você não possui dividas.</Text>
+                  <Text>Você não possui proposta para plano de proteção.</Text>
                 </View>
               ),
             }}

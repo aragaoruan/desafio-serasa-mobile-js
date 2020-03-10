@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert } from 'react-native';
 import { useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
@@ -20,7 +21,17 @@ import {
 export default function Debit({ deb }) {
   const dispatch = useDispatch();
   function handleDebt() {
-    dispatch(getScoreRequest('2'));
+    Alert.alert(
+      'Atenção',
+      'Deseja efetuar o pagamento ?',
+      [
+        {
+          text: 'Cancelar',
+        },
+        { text: 'Confirmar', onPress: () => dispatch(getScoreRequest('2')) },
+      ],
+      { cancelable: false }
+    );
   }
   return (
     <>

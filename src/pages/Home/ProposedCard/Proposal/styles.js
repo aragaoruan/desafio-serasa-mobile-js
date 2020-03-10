@@ -34,6 +34,7 @@ export const OldValue = styled.Text`
   font-size: 12px;
   text-align: right;
   color: #c1c1c1;
+  text-decoration-line: line-through;
 `;
 
 export const NewValue = styled.Text`

@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Card from '~/components/Card';
+import { colors } from '~/styles';
 
 import Credit from './Credit';
 import { Container, View, Text } from './styles';
@@ -11,7 +12,7 @@ export default function CreditCard() {
   const description = {
     title: 'Propostas de crédito',
     icon: 'credit-card',
-    color: '#3df4ee',
+    color: colors.pontuacao_media.primaryColor,
   };
   return (
     <>
