@@ -26,6 +26,7 @@ module.exports = {
     'eslint-plugin-import-helpers'
   ],
   rules: {
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['draft'] }],
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
       'warn',
@@ -37,16 +38,18 @@ module.exports = {
     'import-helpers/order-imports': [
       'warn',
       {
-          newlinesBetween: 'always', // new line between groups
-          groups: [
-              '/ˆreact/',
-              'module',
-              '/ˆ~/',
-              ['parent', 'sibling', 'index'],
-          ],
-          alphabetize: { order: 'asc', ignoreCase: true },
+        newlinesBetween: 'always', // new line between groups
+        groups: [
+          '/^react/',
+          'module',
+          '/^~/',
+          ['parent', 'sibling', 'index'],
+        ],
+        alphabetize: { order: 'asc', ignoreCase: true },
       },
-  ],
+    ],
+    "react/jsx-props-no-spreading": "off"
+
   },
   settings: {
     "import/resolver": {
