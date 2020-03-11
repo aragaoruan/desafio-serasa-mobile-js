@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     es6: true,
+    "jest/globals": true
   },
   extends: [
     'plugin:react/recommended',
@@ -23,7 +24,8 @@ module.exports = {
   plugins: [
     'react',
     'prettier',
-    'eslint-plugin-import-helpers'
+    'eslint-plugin-import-helpers',
+    'jest'
   ],
   rules: {
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['draft'] }],

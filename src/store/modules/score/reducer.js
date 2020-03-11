@@ -1,6 +1,6 @@
 import produce from 'immer';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   score: {
     points: 0,
     description: '',

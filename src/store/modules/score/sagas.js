@@ -6,7 +6,7 @@ import api from '~/services/api';
 
 import { getScoreSuccess, getScoreError } from './actions';
 
-export function* getUser({ payload }) {
+export function* getScore({ payload }) {
   try {
     const { number } = payload;
 
@@ -20,4 +20,4 @@ export function* getUser({ payload }) {
   }
 }
 
-export default all([takeLatest('@score/GET_SCORE_REQUEST', getUser)]);
+export default all([takeLatest('@score/GET_SCORE_REQUEST', getScore)]);

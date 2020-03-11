@@ -1,6 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native';
-import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { useSelector } from 'react-redux';
 
 import { desaturate } from 'polished';
@@ -23,7 +21,7 @@ export default function Avatar() {
         tintColor="#fff"
         backgroundColor={desaturate(0.3, progessColor(score.points))}
       >
-        {() => <AvatarPhoto source={user?.photo} />}
+        {() => <AvatarPhoto testID="photo" source={user?.photo} />}
       </Progress>
 
       <Name>{user?.name}</Name>

@@ -15,8 +15,10 @@ export default function Button({ children, loading, icon, ...rest }) {
         <ActivityIndicator size="small" color={colors.button} />
       ) : (
         <ContainerText>
-          <Text>{children}</Text>
-          {icon && <Icon name={icon} size={20} color={colors.button} />}
+          <Text testID="text-button">{children}</Text>
+          {icon && (
+            <Icon testID="icon" name={icon} size={20} color={colors.button} />
+          )}
         </ContainerText>
       )}
     </Container>

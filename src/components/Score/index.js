@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Line from '~/components/Line';
@@ -17,9 +17,9 @@ export default function Score() {
 
   return (
     <Container>
-      <Points value={score?.points} countBy={1} />
+      <Points testID="points" value={score?.points} countBy={1} />
 
-      <DescriptionPoints>{score?.description}</DescriptionPoints>
+      <DescriptionPoints testID="desc">{score?.description}</DescriptionPoints>
       <Line />
       <Button icon="expand-less">Saiba mais</Button>
       <ContainerDescriptionScore>
