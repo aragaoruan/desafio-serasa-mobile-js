@@ -47,15 +47,15 @@ Caso a pontuação esteja **abaixo de 30**, ele recebe ofertas para negociar sua
 
 Caso sua pontuação esteja entre **31 e 60**, ele está elegível para solicitar crédito, podendo escolher uma das proposta oferecidas;
 
-![img2](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/3.png)
-![img2](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/4.png)
+![img3](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/3.png)
+![img4](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/4.png)
 
 Caso sua pontuação esteja **acima de 50**, será apresentado para ele um card com um plano de proteção ao RG;
 
-![img2](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/5.png)
-![img2](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/6.png)
+![img5](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/5.png)
+![img6](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/6.png)
 
 Caso sua pontuação esteja **acima de 90**, ele receberá um desconto (%) para obter o seu programa de proteção ao RG.
 
-![img2](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/7.png)
+![img7](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/7.png)
 
