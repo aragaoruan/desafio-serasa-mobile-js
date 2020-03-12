@@ -42,6 +42,7 @@ react-native run-ios
 
 # Imagens app
 Caso a pontuação esteja **abaixo de 30**, ele recebe ofertas para negociar suas dívidas;
+
 ![img1](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/1.png)
 ![img2](https://github.com/aragaoruan/desafio-serasa-consumidor/blob/master/example-image/2.png)
 
