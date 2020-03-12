@@ -11,7 +11,7 @@ export default function DebitCard() {
   const { score } = useSelector(state => state.score);
 
   const description = {
-    title: 'Negocie suas Dividas',
+    title: 'Negocie suas Dívidas',
     icon: 'file-alt',
     color: colors.pontuacao_baixa.primaryColor,
   };

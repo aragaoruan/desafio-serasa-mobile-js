@@ -41,7 +41,7 @@ export default function Credit({ cred }) {
     <>
       <Container>
         <TitleDesciption>
-          Encontramos uma oferta de cartao de credito
+          Encontramos uma oferta de cartão de crédito
         </TitleDesciption>
 
         <DescriptionContainer>
