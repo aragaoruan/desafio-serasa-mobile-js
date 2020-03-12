@@ -34,6 +34,17 @@ ou
 react-native run-ios
 ```
 
+### Executando teste
+```
+yarn test
+```
+
+ou
+
+```
+yarn coverage
+```
+
 ## Regras do app
 * Caso a pontuação esteja **abaixo de 30**, ele recebe ofertas para negociar suas dívidas;
 * Caso sua pontuação esteja entre **31 e 60**, ele está elegível para solicitar crédito, podendo escolher uma das proposta oferecidas;
